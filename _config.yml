@@ -9,3 +9,6 @@ defaults:
       type: "portfolio"
     values:
       layout: porfolio
+
+plugins:
+  - jekyll-seo-tag
