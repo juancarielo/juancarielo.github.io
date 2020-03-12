@@ -1,0 +1,14 @@
+---
+layout: default
+title: Portfolio
+permalink: /portfolio/
+---
+
+<ul>
+  {% for portfolio in site.portfolio %}
+    <li>
+      <h2><a href="{{ portfolio.url }}">{{ portfolio.title }}</a></h2>
+      <p>{{ portfolio.description }}</p>
+    </li>
+  {% endfor %}
+</ul>
