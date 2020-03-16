@@ -1,0 +1,7 @@
+- name: Github
+  link: "https://github.com/juancarielo"
+  class: "fa-github"
+
+- name: Linkedin
+  link: "https://www.linkedin.com/in/juancarielo/"
+  class: "fa-linkedin"
