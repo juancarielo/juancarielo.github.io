@@ -9,7 +9,7 @@
       <ul class="navbar-nav ml-auto">
 
         {% for item in site.data.navigation %}
-          <li class="nav-item">
+          <li class="nav-item {% if page.url == item.link %}active{% endif %}">
             <a href="{{ item.link }}">
               {{ item.name }}
             </a>

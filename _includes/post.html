@@ -1,0 +1,14 @@
+<div class="post-preview">
+  <a href="{{ include.content.url }}">
+    <h2 class="post-title">
+      {{ include.content.title }}
+    </h2>
+    <h3 class="post-subtitle">
+      {{ include.content.excerpt|strip_html}}
+    </h3>
+  </a>
+  <p class="post-meta">Posted by
+    {{ include.content.author }} on {{ include.content.date | date_to_string }} &middot; {% include read_time.html content=include.content.content %}
+  </p>
+</div>
+<hr>
