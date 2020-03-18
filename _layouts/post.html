@@ -6,11 +6,8 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-
         {{ content }}
-
         <hr>
-
     </div>
   </div>
 </article>
@@ -19,23 +16,16 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="clearfix">
-
         {% if page.previous.url %}
-
           <a class="btn btn-primary left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
             &laquo; Previous post
           </a>
-
         {% endif %}
-
         {% if page.next.url %}
-
           <a class="btn btn-primary float-right" href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
             Next post &raquo;
           </a>
-
         {% endif %}
-
       </div>
     </div>
   </div>

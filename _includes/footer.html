@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <ul class="list-inline text-center">
-
           {% for item in site.data.footer %}
             <li class="list-inline-item">
               <a href="{{ item.link }}" target="_blank">
@@ -14,10 +13,9 @@
               </a>
             </li>
           {% endfor %}
-
         </ul>
         <p class="copyright text-muted">
-          Copyright &copy; {{ site.name }} {{ "now" | date: "%Y" }} <br>
+          Copyright &copy; {{ site.name }} {{ "now" | date: "%Y" }} <br><br>
           <small>Made with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small>
         </p>
       </div>
