@@ -7,8 +7,8 @@
       {{ include.content.excerpt|strip_html}}
     </h3>
   </a>
-  <p class="post-meta">Posted by
-    {{ site.author }} on {{ include.content.date | date_to_string }} &middot; {% include read_time.html content=include.content.content %}
+  <p class="post-meta">
+    Posted on {{ include.content.date | date_to_string }} &middot; {% include read_time.html content=include.content.content %}
   </p>
 </div>
 <hr>

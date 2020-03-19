@@ -1,11 +1,15 @@
 ---
 layout: page
 title: Home
-description: Welcome.
-permalink: /
+description: Welcome
+bg_page: home-bg
 ---
 
 {% assign posts = site.posts|slice:0,3 %}
 {% for post in posts %}
-  {% include post.html content=post %}
+{% include post.html content=post %}
 {% endfor %}
+
+<div class="clearfix">
+  <a class="btn btn-primary float-right" href="/portfolio/">More &rarr;</a>
+</div>
