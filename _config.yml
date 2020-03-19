@@ -2,6 +2,13 @@ title: Juan Carielo
 name: Juan Carielo
 url: "https://juancarielo.github.io"
 
+author: Juan Carielo
+
+image:
+  path: /img/twitter.png
+  height: 100
+  width: 100
+
 collections:
   portfolio:
     output: true
