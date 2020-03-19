@@ -2,14 +2,31 @@
 layout: default
 ---
 
+<header class="masthead" style="background-color: #062c33">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1> {{ page.title }} </h1>
+          <h2 class="subheading">{{ page.excerpt|strip_html}}</h2>
+          <span class="meta">
+            Posted on {{ page.date | date_to_string }} &middot; {% include read_time.html content=page.content %}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 <article>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         {{ content }}
         <hr>
+      </div>
     </div>
-  </div>
 </article>
 
 <div class="container">
@@ -17,14 +34,16 @@ layout: default
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="clearfix">
         {% if page.previous.url %}
-          <a class="btn btn-primary left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
-            &laquo; Previous post
-          </a>
+        <a class="btn btn-primary left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top"
+           title="{{ page.previous.title }}">
+          &laquo; Previous post
+        </a>
         {% endif %}
         {% if page.next.url %}
-          <a class="btn btn-primary float-right" href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
-            Next post &raquo;
-          </a>
+        <a class="btn btn-primary float-right" href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top"
+           title="{{ page.next.title }}">
+          Next post &raquo;
+        </a>
         {% endif %}
       </div>
     </div>
