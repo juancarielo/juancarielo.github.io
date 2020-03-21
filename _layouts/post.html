@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<header class="masthead" style="background-color: #062c33">
+<header class="masthead">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
@@ -11,9 +11,8 @@ layout: default
           <h1> {{ page.title }} </h1>
           <h2 class="subheading">{{ page.excerpt|strip_html}}</h2>
           <span class="meta">
-            Posted on {{ page.date | date_to_string }} &middot; {% include read_time.html content=page.content %}
+            <a href="#">Company</a> · {{ page.date | date: '%Y' }}
           </span>
-        </div>
       </div>
     </div>
   </div>
@@ -24,6 +23,9 @@ layout: default
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         {{ content }}
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-dark">Visit Website.</a>
+        </div>
         <hr>
       </div>
     </div>
@@ -34,7 +36,7 @@ layout: default
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="clearfix">
         {% if page.previous.url %}
-        <a class="btn btn-primary left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top"
+        <a class="btn btn-primary float-left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top"
            title="{{ page.previous.title }}">
           &laquo; Previous post
         </a>

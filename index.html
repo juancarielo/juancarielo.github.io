@@ -1,13 +1,15 @@
 ---
 layout: page
 title: Home
-description: Welcome
-bg_page: home-bg
+description: Welcome.
+permalink: /
 ---
+
+<!--<h2 class="font-weight-light">Recent Work</h2>-->
 
 {% assign posts = site.posts|slice:0,3 %}
 {% for post in posts %}
-{% include post.html content=post %}
+  {% include post.html content=post %}
 {% endfor %}
 
 <div class="clearfix">
