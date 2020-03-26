@@ -10,7 +10,7 @@ permalink: /portfolio/
   {% assign works = site.works|reverse %}
 
   {% for work in works %}
-    {% include portfolio.html content=work %}
+    {% include work.html content=work %}
   {% endfor %}
 
 {% else %}

@@ -9,7 +9,7 @@ description: Welcome.
   {% assign works = site.works|reverse|slice:0,3 %}
 
   {% for work in works %}
-    {% include portfolio.html content=work %}
+    {% include work.html content=work %}
   {% endfor %}
 
   <div class="clearfix">
