@@ -1,0 +1,16 @@
+{% assign company = site.data.companies | where: 'name', include.content.company | first %}
+
+<div class="post-preview">
+  <a href="{{ include.content.url }}">
+    <h2 class="post-title">
+      {{ include.content.title }}
+    </h2>
+    <h3 class="post-subtitle">
+      {{ include.content.excerpt|strip_html}}
+    </h3>
+  </a>
+  <p class="post-meta">
+    <a href="{{ company.link }}" target="_blank">{{ company.label }}</a> · {{ include.content.date | date: '%Y' }}
+  </p>
+</div>
+<hr>
