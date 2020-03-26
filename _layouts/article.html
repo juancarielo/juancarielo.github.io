@@ -15,13 +15,11 @@ layout: default
           <h1> {{ page.title }} </h1>
           <h2 class="subheading">{{ page.excerpt|strip_html}}</h2>
           <span class="meta">
-
             {% if page.company %}
               <a href="{{ company.link }}" target="_blank">{{ company.label }}</a> · {{ page.date | date: '%Y' }}
             {% else %}
               Posted on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=page.content %}
             {% endif %}
-
           </span>
         </div>
       </div>
@@ -34,7 +32,7 @@ layout: default
       <div class="col-lg-8 col-md-10 mx-auto">
         {{ content }}
         {% if page.link %}
-          <div class="mt-5">
+          <div class="text-center mt-5">
             <a href="{{ page.link }}" target="_blank" class="btn btn-primary">
               <i class="fa fa-external-link-alt"></i> Visit Work
             </a>
