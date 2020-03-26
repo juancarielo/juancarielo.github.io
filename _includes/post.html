@@ -1,3 +1,5 @@
+{% assign company = site.data.companies | where: 'name', include.content.company | first %}
+
 <div class="post-preview">
   <a href="{{ include.content.url }}">
     <h2 class="post-title">
@@ -8,7 +10,7 @@
     </h3>
   </a>
   <p class="post-meta">
-    <a href="#">Company</a> · {{ include.content.date | date: '%Y' }}
+    Posted on {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=include.content.content %}
   </p>
 </div>
 <hr>

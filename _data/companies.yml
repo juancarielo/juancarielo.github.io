@@ -1,0 +1,15 @@
+- name: everis
+  label: everis
+  link: https://www.everis.com/brazil
+
+- name: jussi
+  label: Jüssi
+  link: https://jussi.com.br/
+
+- name: vorttex
+  label: Vorttex
+  link: https://www.vorttex.com.br/
+
+- name: vitaminaweb
+  label: VitaminaWeb
+  link: https://www.vitaminaweb.com.br/

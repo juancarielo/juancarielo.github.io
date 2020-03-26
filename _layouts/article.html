@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+{% if page.company %}
+  {% assign company = site.data.companies | where: 'name', page.company | first %}
+{% endif %}
+
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1> {{ page.title }} </h1>
+          <h2 class="subheading">{{ page.excerpt|strip_html}}</h2>
+          <span class="meta">
+
+            {% if page.company %}
+              <a href="{{ company.link }}" target="_blank">{{ company.label }}</a> · {{ page.date | date: '%Y' }}
+            {% else %}
+              Posted on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=page.content %}
+            {% endif %}
+
+          </span>
+        </div>
+      </div>
+    </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {{ content }}
+        {% if page.link %}
+          <div class="mt-5">
+            <a href="{{ page.link }}" target="_blank" class="btn btn-primary">
+              <i class="fa fa-external-link-alt"></i> Visit Work
+            </a>
+          </div>
+        {% endif %}
+        <hr>
+      </div>
+    </div>
+</article>
+
+{% include pagination.html %}

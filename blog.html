@@ -1,0 +1,18 @@
+---
+layout: page
+title: Blog
+description: Posts to share.
+permalink: /blog
+---
+
+{% if site.posts.size > 0 %}
+
+  {% for post in site.posts %}
+    {% include post.html content=post %}
+  {% endfor %}
+
+{% else %}
+
+  <p class="text-center">No results yet.</p>
+
+{% endif %}

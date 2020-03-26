@@ -2,26 +2,25 @@ title: Juan Carielo
 name: Juan Carielo
 description: Hi, I'm back-end developer.
 url: "https://juancarielo.github.io"
-#baseurl: "/home"
 
 author: Juan Carielo
 
-image:
-  path: /img/twitter.png
-  height: 100
-  width: 100
-
 collections:
-  portfolio:
+  works:
     output: true
-    permalink: /portfolio/:name
+    permalink: /portfolio/:title
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title
 
 defaults:
   - scope:
       path: ""
-      type: "portfolio"
+      type: "works"
     values:
-      layout: porfolio
-
-plugins:
-  - jekyll-seo-tag
+      layout: article
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: article

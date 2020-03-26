@@ -1,7 +1,11 @@
 - name: Github
   link: "https://github.com/juancarielo"
-  class: "fa-github"
+  class: "fab fa-github"
 
 - name: Linkedin
   link: "https://www.linkedin.com/in/juancarielo/"
-  class: "fa-linkedin"
+  class: "fab fa-linkedin"
+
+#- name: Curriculum
+#  link: "/cv.pdf"
+#  class: "fa fa-file-alt"

@@ -1,12 +1,20 @@
 ---
 layout: page
 title: Portfolio
-description: My works.
+description: Some works that I contribute.
 permalink: /portfolio/
 ---
 
-<!--<h2 class="font-weight-light">All Work</h2>-->
+{% if site.works.size > 0 %}
 
-{% for post in site.posts %}
-  {% include post.html content=post %}
-{% endfor %}
+  {% assign works = site.works|reverse %}
+
+  {% for work in works %}
+    {% include portfolio.html content=work %}
+  {% endfor %}
+
+{% else %}
+
+  <p class="text-center">No results yet.</p>
+
+{% endif %}

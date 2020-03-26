@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-right ml-auto">
-        {% for item in site.data.navbar %}
+        {% for item in site.data.menu %}
           {% assign current = item.link | split: '/' %}
           <li class="nav-item {% if page.url == item.link or page.url contains current[1] %}active{% endif %}">
             <a href="{{ item.link }}">

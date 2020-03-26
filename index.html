@@ -5,13 +5,20 @@ description: Welcome.
 permalink: /
 ---
 
-<!--<h2 class="font-weight-light">Recent Work</h2>-->
+{% if site.works.size > 0 %}
 
-{% assign posts = site.posts|slice:0,3 %}
-{% for post in posts %}
-  {% include post.html content=post %}
-{% endfor %}
+  {% assign works = site.works|reverse|slice:0,3 %}
 
-<div class="clearfix">
-  <a class="btn btn-primary float-right" href="/portfolio/">More &rarr;</a>
-</div>
+  {% for work in works %}
+    {% include portfolio.html content=work %}
+  {% endfor %}
+
+  <div class="clearfix">
+    <a class="btn btn-primary float-right" href="/portfolio/">More &rarr;</a>
+  </div>
+
+{% else %}
+
+  <p class="text-center">No results yet.</p>
+
+{% endif %}
