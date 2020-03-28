@@ -2,10 +2,6 @@
 layout: default
 ---
 
-{% if page.company %}
-  {% assign company = site.data.companies | where: 'name', page.company | first %}
-{% endif %}
-
 <header class="masthead">
   <div class="overlay"></div>
   <div class="container">
@@ -16,6 +12,7 @@ layout: default
           <h2 class="subheading">{{ page.excerpt|strip_html}}</h2>
           <span class="meta">
             {% if page.company %}
+              {% assign company = site.data.companies | where: 'name', page.company | first %}
               <a href="{{ company.link }}" target="_blank">{{ company.label }}</a> · {{ page.date | date: '%Y' }}
             {% else %}
               Posted on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=page.content %}
@@ -30,14 +27,18 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        {{ content }}
-
-        {% if page.tags.size > 0 %}
-          <p>
-            Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", "}}.
+        <div class="text-justify">
+          {{ content }}
+        </div>
+        {% if page.screenshot %}
+          <p class="text-center">
+            <img class="img-fluid border" src="{{ page.screenshot }}" alt="{{ page.title }}">
+            <span class="caption text-muted">{{ page.title }}</span>
           </p>
         {% endif %}
-
+        {% if page.tags.size > 0 %}
+          <p>Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", "}}.</p>
+        {% endif %}
         {% if page.link %}
           <div class="text-center mt-5">
             <a href="{{ page.link }}" target="_blank" class="btn btn-primary">
@@ -45,7 +46,6 @@ layout: default
             </a>
           </div>
         {% endif %}
-
         <hr>
       </div>
     </div>
