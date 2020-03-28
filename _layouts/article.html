@@ -13,7 +13,7 @@ layout: default
           <span class="meta">
             {% if page.company %}
               {% assign company = site.data.companies | where: 'name', page.company | first %}
-              <a href="{{ company.link }}" target="_blank">{{ company.label }}</a> · {{ page.date | date: '%Y' }}
+              <a href="{{ company.link }}" rel="noopener" target="_blank">{{ company.label }}</a> · {{ page.date | date: '%Y' }}
             {% else %}
               Posted on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=page.content %}
             {% endif %}
@@ -41,7 +41,7 @@ layout: default
         {% endif %}
         {% if page.link %}
           <div class="text-center mt-5">
-            <a href="{{ page.link }}" target="_blank" class="btn btn-primary">
+            <a href="{{ page.link }}" rel="noopener" target="_blank" class="btn btn-primary" aria-label="Visit Work">
               <i class="fa fa-external-link-alt"></i> Visit Work
             </a>
           </div>
