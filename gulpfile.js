@@ -24,10 +24,10 @@ function scss() {
 }
 
 function scripts() {
-  return src(paths.scripts, { sourcemaps: true })
+  return src(paths.scripts)
     .pipe(uglify())
     .pipe(concat('app.min.js'))
-    .pipe(dest(paths.dest.scripts, { sourcemaps: true }))
+    .pipe(dest(paths.dest.scripts))
 }
 
 function images() {
