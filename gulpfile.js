@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
 const paths = {
-  scss: ['assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss', 'assets/src/scss/**/*.scss'],
+  scss: ['assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss', 'assets/src/scss/*.scss'],
   scripts: ['assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js', 'assets/src/scripts/*.js'],
   images: ['assets/src/images/**/*.{png,jpeg,jpg}'],
   dest: {
