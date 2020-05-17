@@ -30,12 +30,6 @@ layout: default
         <div class="text-justify">
           {{ content }}
         </div>
-        {% if page.screenshot %}
-          <p class="text-center">
-            <img class="img-fluid border" src="/assets/dist/img/works/{{ page.screenshot }}" alt="{{ page.title }}">
-            <span class="caption text-muted">{{ page.title }}</span>
-          </p>
-        {% endif %}
         {% if page.tags.size > 0 %}
           <p>Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", "}}.</p>
         {% endif %}
