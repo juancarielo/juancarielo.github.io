@@ -3,14 +3,12 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="clearfix">
         {% if page.previous.url %}
-        <a class="btn btn-primary float-left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top"
-           title="{{ page.previous.title }}">
+        <a class="btn btn-primary float-left" href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
           ← Previous
         </a>
         {% endif %}
         {% if page.next.url %}
-        <a class="btn btn-primary float-right" href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top"
-           title="{{ page.next.title }}">
+        <a class="btn btn-primary float-right" href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
           Next →
         </a>
         {% endif %}

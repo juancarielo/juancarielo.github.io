@@ -31,7 +31,7 @@ layout: default
           {{ content }}
         </div>
         {% if page.tags.size > 0 %}
-          <p>Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", "}}.</p>
+          <p>Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", " | downcase}}.</p>
         {% endif %}
         {% if page.link %}
           <div class="text-center mt-5">
