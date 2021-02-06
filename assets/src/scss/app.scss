@@ -3,7 +3,8 @@
   border-bottom: none;
 
   .navbar-brand {
-    color: #fff
+    color: #fff;
+    font-weight: unset;
   }
 
   .navbar-toggler {
@@ -54,7 +55,8 @@ header.masthead {
   margin: 10px auto;
   max-width: 600px;
   text-align: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  margin-top: 12%;
 }
 #404>h1 {
   margin: 30px 0;
