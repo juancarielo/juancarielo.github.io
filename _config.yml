@@ -4,23 +4,13 @@ description: Hi, I'm back-end developer.
 url: "https://juancarielo.github.io"
 author: Juan Carielo
 google_analytics: 'UA-45662850-2'
-
 collections:
   works:
     output: true
     permalink: /portfolio/:title
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title
-
 defaults:
   - scope:
       path: ""
       type: "works"
     values:
-      layout: article
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: article
+      layout: work
