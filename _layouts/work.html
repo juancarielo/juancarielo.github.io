@@ -31,16 +31,16 @@ layout: default
           {{ content }}
         </div>
         {% if page.tags.size > 0 %}
-          <p>Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", " | downcase}}.</p>
+          <small class="text-muted">Tag{% if page.tags.size > 1 %}s{% endif %}: {{ page.tags | sort | join: ", " | downcase}}.</small>
         {% endif %}
         {% if page.link %}
-          <div class="text-center mt-5">
+          <div class="text-center mt-5 pt-5 pb-5">
             <a href="{{ page.link }}" rel="noopener" target="_blank" class="btn btn-primary" aria-label="Visit Work">
-              <i class="fa fa-external-link-alt"></i> Visit Work
+              <i class="fa fa-external-link-alt"></i> Visit the Work
             </a>
           </div>
         {% endif %}
-        <hr>
+        <!-- <hr> -->
       </div>
     </div>
 </article>

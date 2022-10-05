@@ -5,7 +5,3 @@
 - name: LinkedIn
   link: "https://www.linkedin.com/in/juancarielo/"
   class: "fab fa-linkedin"
-
-#- name: Curriculum
-#  link: "/assets/file/curriculum.pdf"
-#  class: "fa fa-file-alt"
