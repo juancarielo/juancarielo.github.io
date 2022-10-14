@@ -4,6 +4,7 @@ description: Hi, I'm back-end developer.
 url: "https://juancarielo.github.io"
 author: Juan Carielo
 google_analytics: 'UA-45662850-2'
+ga4: 'G-SHZ0XQ2CFL'
 collections:
   works:
     output: true
