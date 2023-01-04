@@ -6,13 +6,12 @@
   "license": "ISC",
   "author": "",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "dependencies": {
-    "bootstrap": "4.3.1",
-    "font-awesome": "4.7.0",
-    "jquery": "3.5.0",
-    "startbootstrap-clean-blog": "5.0.8"
+    "bootstrap": "^5.2.3",
+    "font-awesome": "4.7.0"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
