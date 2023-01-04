@@ -3,12 +3,9 @@ title: Honda Institutional
 company: jussi
 link: https://www.honda.com.br/
 tags: [Acquia Cloud, Drupal, Symfony, Custom Module, API]
+isProject: true
 ---
 
-<p>
-  Development and maintenance using architecture <i>coupled</i> in Drupal 8.
-</p>
+Development and maintenance using architecture <i>coupled</i> in Drupal 8.
 
-<p>
-  Portal focused on information about Honda.
-</p>
+Portal focused on information about Honda.

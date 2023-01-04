@@ -13,9 +13,13 @@ layout: default
           <span class="meta">
             {% if page.company %}
               {% assign company = site.data.companies | where: 'name', page.company | first %}
-              <a href="{{ company.link }}" rel="noopener" target="_blank">{{ company.label }}</a> · {{ page.date | date: '%Y' }}
+              <a href="{{ company.link }}" rel="noopener" target="_blank">{{ company.label }}</a> · {{ page.date | date:
+              '%Y' }}
             {% else %}
               Posted on {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=page.content %}
+            {% endif %}
+            {% if page.isProject %}
+              · <i class="fas fa-globe" title="Project"></i>
             {% endif %}
           </span>
         </div>
@@ -36,11 +40,10 @@ layout: default
         {% if page.link %}
           <div class="text-center mt-5 pt-5 pb-5">
             <a href="{{ page.link }}" rel="noopener" target="_blank" class="btn btn-primary" aria-label="Visit Work">
-              <i class="fa fa-external-link-alt"></i> Visit the Work
+              <i class="fa fa-external-link-alt"></i> Visit the {% if page.isProject %}Project{% else %}Company{% endif %}
             </a>
           </div>
         {% endif %}
-        <!-- <hr> -->
       </div>
     </div>
 </article>
