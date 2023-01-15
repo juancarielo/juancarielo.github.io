@@ -10,8 +10,8 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "font-awesome": "4.7.0"
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "bootstrap": "^5.2.3"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
