@@ -5,19 +5,13 @@ description: Welcome.
 ---
 
 {% if site.works.size > 0 %}
-
-  {% assign works = site.works|reverse|slice:0,3 %}
-
+  {% assign works = site.works|reverse|slice:0,4 %}
   {% for work in works %}
     {% include work.html content=work %}
   {% endfor %}
-
-  <div class="clearfix text-center">
+  <div class="clearfix text-center mt-5">
     <a class="btn btn-primary" href="/portfolio/"><i class="fa fa-info-circle"></i> More</a>
   </div>
-
 {% else %}
-
-  <p class="text-center">No results yet.</p>
-
+  <p class="text-center my-5">No results yet.</p>
 {% endif %}

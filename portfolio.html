@@ -6,15 +6,10 @@ permalink: /portfolio/
 ---
 
 {% if site.works.size > 0 %}
-
   {% assign works = site.works|reverse %}
-
   {% for work in works %}
     {% include work.html content=work %}
   {% endfor %}
-
 {% else %}
-
-  <p class="text-center">No results yet.</p>
-
+  <p class="text-center my-5">No results yet.</p>
 {% endif %}

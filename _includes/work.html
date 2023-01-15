@@ -1,6 +1,6 @@
 {% assign company = site.data.companies | where: 'name', include.content.company | first %}
 
-<div class="post-preview">
+<div class="post-preview my-4">
   <a href="{{ include.content.url }}">
     <h2 class="post-title">
       {{ include.content.title }}
@@ -11,6 +11,11 @@
   </a>
   <p class="post-meta">
     <a href="{{ company.link }}" rel="noopener" target="_blank">{{ company.label }}</a> · {{ include.content.date | date: '%Y' }}
+    {% if include.content.isProject %}
+    · <i class="fas fa-globe" title="Project"></i>
+    {% else %}
+    · <i class="fas fa-building" title="Company"></i>
+    {% endif %}
   </p>
 </div>
 

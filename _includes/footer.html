@@ -1,6 +1,5 @@
-<hr>
-
-<footer>
+<footer class="mb-3">
+  <hr class="my-5">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
@@ -10,13 +9,13 @@
             <a href="{{ item.link }}" rel="noopener" target="_blank" title="{{ item.name }}" aria-label="{{ item.name }}">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="{{ " fa-stack-1x fa-inverse " | append: item.class }}"></i>
+                <i class="fa-stack-1x fa-inverse {{ item.class }}"></i>
               </span>
             </a>
           </li>
           {% endfor %}
         </ul>
-        <p class="copyright text-muted mt-5">
+        <p class="copyright text-center text-muted mt-5">
           {{ site.name }} © {{ "now" | date: "%Y" }}
           <br>
           <small>Made with <a href="https://jekyllrb.com/" rel="noopener" target="_blank">Jekyll</a>.</small>

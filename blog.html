@@ -6,12 +6,9 @@ permalink: /blog
 ---
 
 {% if site.posts.size > 0 %}
-
   {% for post in site.posts %}
     {% include post.html content=post %}
   {% endfor %}
 {% else %}
-
-  <p class="text-center">No results yet.</p>
-
+  <p class="text-center my-5">He he, it's not done yet. Sorry.</p>
 {% endif %}
