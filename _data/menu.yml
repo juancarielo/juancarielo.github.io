@@ -6,3 +6,7 @@
 
 - name: Portfolio
   link: /portfolio/
+
+- name: Blog (soon)
+  link: /blog/
+  disabled: true

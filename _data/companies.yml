@@ -1,7 +1,6 @@
 - name: northern
-  label: Northern Commerce
+  label: Northern
   link: https://www.northern.co/
-
 
 - name: tcs
   label: Tata Consultancy Services
@@ -24,5 +23,5 @@
   link: https://www.vitaminaweb.com.br/
 
 - name: dpto
-  label: DPTO Propaganda
+  label: DPTO
   link: https://www.dpto.com.br/
