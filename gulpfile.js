@@ -1,26 +1,38 @@
-const { src, dest, watch, series } = require('gulp');
+const { dest, series, src, watch } = require('gulp');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const merge = require('merge-stream');
 const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
+// Define the source and the destination of the assets
 const paths = {
-  scss: ['assets/vendor/startbootstrap-clean-blog/scss/clean-blog.scss', 'assets/src/scss/*.scss'],
-  scripts: ['assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js', 'assets/src/scripts/*.js'],
+  styles: ['assets/src/scss/*.scss'],
+  scripts: ['assets/src/scripts/*.js'],
   images: ['assets/src/images/**/*.{png,jpeg,jpg}'],
   dest: {
-    scss: 'assets/dist/css',
+    styles: 'assets/dist/css',
     scripts: 'assets/dist/js',
     images: 'assets/dist/img'
   }
 };
 
-function scss() {
-  return src(paths.scss)
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+// Set the vendors to copy from node_modules
+const vendors = [
+  '@fortawesome/fontawesome-free',
+  '!@fortawesome/fontawesome-free/less',
+  '!@fortawesome/fontawesome-free/scss',
+  '!@fortawesome/fontawesome-free/js',
+  'bootstrap/dist',
+  // 'jquery/dist',
+];
+
+function styles() {
+  return src(paths.styles)
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(concat('app.min.css'))
-    .pipe(dest(paths.dest.scss));
+    .pipe(dest(paths.dest.styles));
 }
 
 function scripts() {
@@ -36,46 +48,18 @@ function images() {
     .pipe(dest(paths.dest.images))
 }
 
-// Copy third party libraries from /node_modules into /vendor
+// Copy third party libraries from node_modules into vendor
 function vendor() {
-  // Start Bootstrap Clean Blog SCSS
-  src([
-    './node_modules/startbootstrap-clean-blog/scss/**/*'
-  ])
-    .pipe(dest('assets/vendor/startbootstrap-clean-blog/scss'));
-
-  // Start Bootstrap Clean Blog JS
-  src([
-    './node_modules/startbootstrap-clean-blog/js/clean-blog.min.js'
-  ])
-    .pipe(dest('assets/vendor/startbootstrap-clean-blog/js'));
-
-  // Bootstrap
-  src([
-    './node_modules/bootstrap/dist/**/*',
-    '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
-    '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
-  ])
-    .pipe(dest('assets/vendor/bootstrap'));
-
-  // jQuery
-  src([
-    './node_modules/jquery/dist/*',
-    '!./node_modules/jquery/dist/core.js'
-  ])
-    .pipe(dest('assets/vendor/jquery'))
-
-  // Font Awesome
-  src([
-    './node_modules/@fortawesome/**/*',
-  ])
-    .pipe(dest('assets/vendor'))
+  return merge(vendors.map(function (vendor) {
+    return src('node_modules/' + vendor + '/**/*')
+      .pipe(dest('assets/vendor/' + vendor.replace(/\/.*/, '')));
+  }));
 }
 
-exports.build = series(vendor, scss, scripts, images);
+exports.build = series(vendor, styles, scripts, images);
 
-exports.default = function() {
-  watch(paths.scss, { ignoreInitial: false }, scss);
+exports.default = function () {
+  watch(paths.styles, { ignoreInitial: false }, styles);
   watch(paths.scripts, { ignoreInitial: false }, scripts);
   watch(paths.images, { ignoreInitial: false }, images);
 };
