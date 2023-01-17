@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-// @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// TODO: Check implementation from startboostrap scss variables, styles, etc
-
+// Variables
 @import "variables";
-@import "typography";
 
-@import "general";
+// Import Boostrap and build it with own custom variables.
+@import "../../../node_modules/bootstrap/scss/bootstrap";
 
+// Global styles
+@import "global";
+
+// Components
 @import "navbar";
 @import "masterhead";
-@import "work";
-@import "about";
 @import "footer";
 
-
+// Pages
+@import "about";
+@import "work";
+@import "not-found";

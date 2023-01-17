@@ -1,12 +1,15 @@
-// $blue: #212529;
-
-$primary: #00657b;
-$secondary: #00657b;
-
-
-$main-font-family: "Major Mono Display", monospace;
+// Default
 $main-color: #212529;
-
-$secondary-font-family: 'Open Sans', sans-serif;
-$secondary-color: #0085A1;
+$main-font-family: "Major Mono Display", monospace;
+$secondary-font-family: "Open Sans", sans-serif;
+$secondary-color: #0085a1;
 $secondary-color-hover: #00657b;
+
+// Boostrap variables.
+$font-family-base: 'Open Sans', sans-serif;
+$gray-900: #212529;
+$teal: #0085a1;
+$primary: $teal;
+$min-contrast-ratio: 3;
+$link-color: $gray-900;
+$link-hover-color: $primary;

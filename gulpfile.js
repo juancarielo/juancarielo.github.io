@@ -20,12 +20,13 @@ const paths = {
 
 // Set the vendors to copy from node_modules
 const vendors = [
-  '@fortawesome/fontawesome-free',
-  '!@fortawesome/fontawesome-free/less',
-  '!@fortawesome/fontawesome-free/scss',
-  '!@fortawesome/fontawesome-free/js',
-  'bootstrap/dist',
-  // 'jquery/dist',
+  '@fortawesome/fontawesome-free/css',
+  '@fortawesome/fontawesome-free/sprites',
+  '@fortawesome/fontawesome-free/svgs',
+  '@fortawesome/fontawesome-free/webfonts',
+  '!@fortawesome/fontawesome-free/*',
+  'bootstrap/dist/js',
+  '!bootstrap/dist/*',
 ];
 
 function styles() {
@@ -48,11 +49,13 @@ function images() {
     .pipe(dest(paths.dest.images))
 }
 
+// FIXME: Find way to create a better vendor path.
 // Copy third party libraries from node_modules into vendor
 function vendor() {
   return merge(vendors.map(function (vendor) {
     return src('node_modules/' + vendor + '/**/*')
-      .pipe(dest('assets/vendor/' + vendor.replace(/\/.*/, '')));
+      .pipe(dest('assets/vendor/' + vendor));
+      // .pipe(dest('assets/vendor/' + vendor.replace(/\/.*/, '')));
   }));
 }
 
