@@ -1,11 +1,11 @@
 ---
 title: Northern Commerce
 company: northern
-tags: ['Drupal', Acquia Cloud, Pantheon, Custom Module, Importers, Apache Solr]
+tags: [Drupal, Acquia Cloud, Pantheon, Custom Module, Importers, Apache Solr]
 isCompany: true
 ---
 
-Development and maintance of sites using Drupal at platforms like Acquia Cloud & Pantheon.
+Development and maintance of sites using Drupal at platforms like Acquia & Pantheon.
 
 Importers using custom module to import data from file or external source, some bugfixes, etc.
 
