@@ -2,6 +2,9 @@
 layout: default
 ---
 
+{% assign subtitle = page.subtitle %}
+{% unless subtitle %}{% assign subtitle = page.description %}{% endunless %}
+
 <header class="masthead">
   <div class="overlay"></div>
   <div class="container mb-5">
@@ -9,7 +12,7 @@ layout: default
       <div class="col-lg-8 col-md-10 mx-auto text-center">
         <div class="page-heading">
           <h1>{{ page.title }}</h1>
-          <span class="subheading">{{ page.description }}</span>
+          <span class="subheading">{{ subtitle }}</span>
         </div>
       </div>
     </div>

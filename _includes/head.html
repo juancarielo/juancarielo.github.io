@@ -1,16 +1,13 @@
 <head>
   <meta charset="utf-8">
-  <meta content="noindex" name="robots">
-  <meta content="noindex" name="googlebot">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="no-cache" http-equiv="cache-control">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="{{ site.author }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="{{ site.theme_color }}">
-  <title>{{ site.title }} | {{ page.title }}</title>
-  {% include styles.html %}
+
+  {% seo %}
+
   {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include google_analytics.html %}
   {% endif %}
+
+  {% include styles.html %}
 </head>

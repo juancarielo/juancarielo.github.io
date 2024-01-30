@@ -40,14 +40,14 @@ layout: default
         {% endif %}
         {% if page.link %}
         <div class="text-center my-5">
-          <a href="{{ page.link }}" rel="noopener" rel=”nofollow” target="_blank" class="btn btn-primary" aria-label="Visit the project">
+          <a href="{{ page.link }}" rel="noopener" rel=”nofollow” target="_blank" class="btn btn-secondary" aria-label="Visit the project">
             <i class="fa fa-external-link-alt"></i> Visit the Project
           </a>
         </div>
         {% endif %}
         {% if page.isCompany %}
         <div class="text-center my-5">
-          <a href="{{ company.link }}" rel="noopener" rel=”nofollow” target="_blank" class="btn btn-primary" aria-label="Visit the Company">
+          <a href="{{ company.link }}" rel="noopener" rel=”nofollow” target="_blank" class="btn btn-secondary" aria-label="Visit the Company">
             <i class="fa fa-external-link-alt"></i> Visit the Company
           </a>
         </div>
@@ -61,12 +61,12 @@ layout: default
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="clearfix">
         {% if page.previous.url %}
-          <a class="btn btn-primary float-start" href="{{ page.previous.url }}" data-bs-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
+          <a class="btn btn-secondary float-start" href="{{ page.previous.url }}" data-bs-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
             ← Previous
           </a>
         {% endif %}
         {% if page.next.url %}
-          <a class="btn btn-primary float-end" href="{{ page.next.url }}" data-bs-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
+          <a class="btn btn-secondary float-end" href="{{ page.next.url }}" data-bs-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
             Next →
           </a>
         {% endif %}
