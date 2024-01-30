@@ -1,12 +1,10 @@
 const { dest, series, src, watch } = require('gulp');
-const concat = require('gulp-concat');
-const merge = require('merge-stream');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
-const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
+const sass = require('gulp-sass')(require('sass'));
+const rename = require('gulp-rename');
 
-// Define the source and the destination of the assets
+// Define the source and the destination of the assets.
 const paths = {
   styles: ['assets/src/scss/*.scss'],
   scripts: ['assets/src/scripts/*.js'],
@@ -18,28 +16,17 @@ const paths = {
   }
 };
 
-// Set the vendors to copy from node_modules
-const vendors = [
-  '@fortawesome/fontawesome-free/css',
-  '@fortawesome/fontawesome-free/sprites',
-  '@fortawesome/fontawesome-free/svgs',
-  '@fortawesome/fontawesome-free/webfonts',
-  '!@fortawesome/fontawesome-free/*',
-  'bootstrap/dist/js',
-  '!bootstrap/dist/*',
-];
-
 function styles() {
   return src(paths.styles)
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(concat('app.min.css'))
+    .pipe(rename({ extname: '.min.css' }))
     .pipe(dest(paths.dest.styles));
 }
 
 function scripts() {
   return src(paths.scripts)
     .pipe(uglify())
-    .pipe(concat('app.min.js'))
+    .pipe(rename({ extname: '.min.js' }))
     .pipe(dest(paths.dest.scripts))
 }
 
@@ -49,17 +36,7 @@ function images() {
     .pipe(dest(paths.dest.images))
 }
 
-// FIXME: Find way to create a better vendor path.
-// Copy third party libraries from node_modules into vendor
-function vendor() {
-  return merge(vendors.map(function (vendor) {
-    return src('node_modules/' + vendor + '/**/*')
-      .pipe(dest('assets/vendor/' + vendor));
-      // .pipe(dest('assets/vendor/' + vendor.replace(/\/.*/, '')));
-  }));
-}
-
-exports.build = series(vendor, styles, scripts, images);
+exports.build = series(styles, scripts, images);
 
 exports.default = function () {
   watch(paths.styles, { ignoreInitial: false }, styles);
