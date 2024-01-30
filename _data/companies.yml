@@ -1,3 +1,7 @@
+- name: acquia
+  label: Acquia
+  link: https://www.acquia.com/
+
 - name: northern
   label: Northern
   link: https://www.northern.co/
@@ -5,6 +9,10 @@
 - name: tcs
   label: Tata Consultancy Services
   link: https://www.tcs.com/
+
+- name: nttdata
+  label: NTT Data
+  link: https://br.nttdata.com/
 
 - name: everis
   label: Everis

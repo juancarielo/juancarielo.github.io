@@ -1,17 +1,26 @@
 title: Juan Carielo
 name: Juan Carielo
-description: Hi, I'm back-end developer.
-url: "https://juancarielo.github.io"
 author: Juan Carielo
+description: Just a simple portfolio to share projects and content about Drupal.
 theme_color: "#212529"
-google_analytics: 'G-SHZ0XQ2CFL'
+google_analytics: "G-SHZ0XQ2CFL"
+url: "https://juancarielo.github.io"
+
 collections:
   works:
     output: true
     permalink: /portfolio/:title
+
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/dist/img/share.png"
   - scope:
       path: ""
       type: "works"
     values:
       layout: work
+
+plugins:
+  - jekyll-seo-tag
