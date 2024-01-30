@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Home
-description: Welcome.
+subtitle: Welcome.
 ---
 
 {% if site.works.size > 0 %}
-  {% assign works = site.works|reverse|slice:0,4 %}
+  {% assign works = site.works|reverse|slice:0,5 %}
   {% for work in works %}
     {% include work.html content=work %}
   {% endfor %}
   <div class="clearfix text-center mt-5">
-    <a class="btn btn-primary" href="/portfolio/"><i class="fa fa-info-circle"></i> More</a>
+    <a class="btn btn-secondary" href="/portfolio/"><i class="fa fa-info-circle"></i> Go to Portfolio</a>
   </div>
 {% else %}
   <p class="text-center my-5">No results yet.</p>
