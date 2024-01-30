@@ -6,6 +6,8 @@ theme_color: "#212529"
 google_analytics: "G-SHZ0XQ2CFL"
 url: "https://juancarielo.github.io"
 
+permalink: pretty
+
 collections:
   works:
     output: true
