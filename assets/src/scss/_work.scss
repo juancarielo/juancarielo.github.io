@@ -23,10 +23,21 @@
 }
 
 .post-preview {
+
+  padding: 10px;
+
+  &:hover {
+    background-color: #f8efef8f;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   .post-meta {
     font-size: 18px;
     margin-top: 0;
-    color: #868e96;
+    // color: #868e96;
   }
 
   .post-title {
@@ -34,6 +45,7 @@
     font-size: 36px;
     margin-top: 30px;
     margin-bottom: 10px;
+    max-width: max-content;
   }
 
   .post-subtitle {

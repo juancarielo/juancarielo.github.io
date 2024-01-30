@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-
 // Variables
 @import "variables";
 
-// Import Boostrap and build it with own custom variables.
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+// TODO: Refactor this file.
+// Custom styles.
+@import "custom";
 
 // Global styles
 @import "global";
@@ -18,3 +17,7 @@
 @import "about";
 @import "work";
 @import "not-found";
+
+// To use in post blogs.
+// background: rgb(33,37,41);
+// background: linear-gradient(180deg, rgba(33,37,41,1) 0%, rgba(65,68,72,1) 100%);

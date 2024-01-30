@@ -1,0 +1,25 @@
+// Root variables.
+:root {
+  --bs-link-color: #212529;
+  --bs-link-hover-color: #0085a1;
+  --bs-secondary: #212529;
+
+  --bs-btn-bg: #212529;
+  --bs-btn-hover-bg: #00657b;
+
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #00657b;
+  --bs-btn-active-border-color: #00657b;
+}
+
+.btn-secondary,
+.btn-secondary:active {
+  --bs-btn-bg: #212529;
+  --bs-btn-hover-bg: #00657b;
+}
+
+.btn:first-child:active {
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #00657b;
+  --bs-btn-active-border-color: #00657b;
+}
