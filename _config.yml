@@ -12,6 +12,9 @@ collections:
   works:
     output: true
     permalink: /portfolio/:title
+  posts:
+    output: true
+    permalink: /blog/:title
 
 defaults:
   - scope:
@@ -23,6 +26,11 @@ defaults:
       type: "works"
     values:
       layout: work
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
 
 plugins:
   - jekyll-seo-tag
