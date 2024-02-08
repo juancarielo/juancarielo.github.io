@@ -1,17 +1,17 @@
-{% assign company = site.data.companies | where: 'name', include.content.company | first %}
-
 <div class="post-preview">
   <a href="{{ include.content.url }}">
     <h2 class="post-title">
       {{ include.content.title }}
     </h2>
     <h3 class="post-subtitle">
-      {{ include.content.excerpt|strip_html}}
+      {{ include.content.excerpt|strip_html }}
     </h3>
   </a>
   <p class="post-meta">
-    Posted on {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=include.content.content %}
+    {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=include.content.content %}
   </p>
 </div>
 
-<hr>
+{% if forloop.last == false %}
+  <hr>
+{% endif %}

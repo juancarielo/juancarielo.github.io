@@ -4,6 +4,16 @@ title: Home
 subtitle: Welcome.
 ---
 
+{% if site.posts.size > 0 %}
+  {% assign posts = site.posts|slice:0,2 %}
+  {% for post in posts %}
+    {% include post.html content=post %}
+  {% endfor %}
+  <div class="clearfix text-center mt-5">
+    <a class="btn btn-secondary" href="/blog/"><i class="fa fa-info-circle"></i> Go to Blog</a>
+  </div>
+{% endif %}
+
 {% if site.works.size > 0 %}
   {% assign works = site.works|reverse|slice:0,5 %}
   {% for work in works %}

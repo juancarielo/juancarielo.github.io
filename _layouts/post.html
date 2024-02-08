@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<style>
+  .masthead {
+    background: linear-gradient(180deg, rgba(33,37,41,1) 55%, rgba(65,68,72,1) 100%);
+  }
+</style>
+
+<header class="masthead mb-5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1> {{ page.title }} </h1>
+          <h2 class="subheading">{{ page.excerpt|strip_html}}</h2>
+          <span class="meta">
+            {{ page.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=page.content %}
+          </span>
+        </div>
+      </div>
+    </div>
+</header>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="text-justify">
+          {{ content }}
+        </div>
+        {% if page.tags.size > 0 %}
+          <div class=" my-5">
+            <small class="text-muted"># {{ page.tags | sort | join: ", " }}.</small>
+          </div>
+        {% endif %}
+        {% if page.link %}
+        <div class="text-center my-5">
+          <a href="{{ page.link }}" rel="noopener" rel=”nofollow” target="_blank" class="btn btn-secondary" aria-label="Visit the project">
+            <i class="fa fa-external-link-alt"></i> Visit the Project
+          </a>
+        </div>
+        {% endif %}
+        {% if page.isCompany %}
+        <div class="text-center my-5">
+          <a href="{{ company.link }}" rel="noopener" rel=”nofollow” target="_blank" class="btn btn-secondary" aria-label="Visit the Company">
+            <i class="fa fa-external-link-alt"></i> Visit the Company
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+</article>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="clearfix">
+        {% if page.previous.url %}
+          <a class="btn btn-secondary float-start" href="{{ page.previous.url }}" data-bs-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">
+            ← Previous
+          </a>
+        {% endif %}
+        {% if page.next.url %}
+          <a class="btn btn-secondary float-end" href="{{ page.next.url }}" data-bs-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">
+            Next →
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
