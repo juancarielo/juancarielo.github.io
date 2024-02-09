@@ -1,9 +1,11 @@
+// The idea came from this super interesting theme.
+// https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll
+
 // Variables
 @import "variables";
 
-// TODO: Refactor this file.
 // Custom styles.
-@import "custom";
+@import "custom"; // TODO: Refactor this file.
 
 // Global styles
 @import "global";
@@ -16,8 +18,5 @@
 // Pages
 @import "about";
 @import "work";
+@import "post";
 @import "not-found";
-
-// To use in post blogs.
-// background: rgb(33,37,41);
-// background: linear-gradient(180deg, rgba(33,37,41,1) 0%, rgba(65,68,72,1) 100%);

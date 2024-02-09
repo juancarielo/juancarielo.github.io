@@ -1,6 +1,8 @@
+// Bootstrap.
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+// Menu.
 function disableOverflow()
 {
   const button = document.getElementById("main-menu-icon");
@@ -12,3 +14,7 @@ function disableOverflow()
   }
 }
 
+// highlight.js
+hljs.highlightAll();
+hljs.initLineNumbersOnLoad();
+hljs.addPlugin(new CopyButtonPlugin());

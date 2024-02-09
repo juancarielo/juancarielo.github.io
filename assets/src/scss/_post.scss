@@ -1,0 +1,52 @@
+/* _sass/_post.css */
+pre.highlight > button {
+  opacity: 0;
+  float: right;
+}
+
+pre.highlight:hover > button {
+  opacity: 1;
+  float: right;
+}
+
+pre.highlight > button:active,
+pre.highlight > button:focus {
+  opacity: 1;
+}
+
+.hljs-ln-n {
+  margin-right: 10px;
+}
+
+/* for block of numbers */
+.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #CCC;
+  vertical-align: top;
+  padding-right: 5px;
+}
+
+/* Custom */
+article blockquote {
+  margin-top: -10px;
+}
+
+.hljs-ln-code {
+  padding-left: 10px !important;
+}
+
+.hljs {
+  background-color:#212529 !important;
+}
+
+.font-small {
+  font-size: 14px;;
+}
