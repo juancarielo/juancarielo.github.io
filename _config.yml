@@ -8,6 +8,8 @@ url: "https://juancarielo.github.io"
 
 permalink: pretty
 
+timezone: America/Sao_Paulo
+
 collections:
   works:
     output: true
@@ -22,6 +24,15 @@ defaults:
     values:
       image: "/assets/dist/img/share.png"
   - scope:
+      path: "assets/dist/img/**"
+    values:
+      sitemap: false
+  - scope:
+      path: "assets/src/images/**"
+    values:
+      sitemap: false
+
+  - scope:
       path: ""
       type: "works"
     values:
@@ -34,3 +45,4 @@ defaults:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
