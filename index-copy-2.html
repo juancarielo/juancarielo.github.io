@@ -1,0 +1,397 @@
+---
+layout: page
+title: Home
+description: Solutions Engineer & Drupal Specialist
+---
+
+<div id="hero-svg">
+  {% include hero_svg.html title="Juan Carielo" background=false %}
+</div>
+
+<main>
+
+  <!-- Work Highlights -->
+  <section id="work-highlights" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-2xl font-medium tracking-tight">Recent Work</h2>
+
+      {% if site.works.size > 0 %}
+        {% assign highlight_works = site.works | reverse | slice: 0, 4 %}
+
+        <div class="relative mt-10 sm:mt-16">
+          <div class="absolute inset-y-0 left-4 w-px bg-stone-200 sm:hidden"></div>
+          <div class="absolute inset-x-0 top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-stone-300 to-transparent sm:block"></div>
+
+          <div class="space-y-8 sm:grid sm:grid-cols-5 sm:gap-8 sm:space-y-0">
+            {% for work in highlight_works %}
+              {% assign company = site.data.companies | where: 'name', work.company | first %}
+              {% assign is_odd = forloop.index0 | modulo: 2 %}
+              <a href="{{ work.url }}" class="group relative block sm:h-56">
+                <span class="absolute left-4 top-1.5 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-stone-900 bg-stone-50 transition-colors group-hover:bg-stone-900 sm:left-1/2 sm:top-1/2 sm:-translate-y-1/2 sm:transition-transform sm:duration-200 sm:group-hover:scale-125">
+                  {% if forloop.first %}
+                    <span class="absolute -inset-1 animate-ping rounded-full bg-stone-900/50"></span>
+                  {% endif %}
+                </span>
+
+                <div class="pl-10 sm:pl-0 sm:absolute sm:left-1/2 sm:w-40 sm:-translate-x-1/2 sm:text-center {% if is_odd == 1 %}sm:top-[calc(50%_+_0.75rem)]{% else %}sm:bottom-[calc(50%_+_0.75rem)]{% endif %}">
+                  <span class="font-mono text-xs text-stone-400 sm:text-[10px]">{{ work.date | date: '%Y' }}</span>
+                  <span class="block font-medium leading-snug text-stone-900 group-hover:underline sm:text-sm">{{ work.title }}</span>
+                  <span class="block font-mono text-[10px] text-stone-400 sm:text-[9px]">{{ company.label }}</span>
+                </div>
+              </a>
+            {% endfor %}
+
+            <a href="/work/" class="group relative block sm:h-56">
+              <span class="absolute left-4 top-1.5 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-dashed border-stone-400 bg-stone-50 transition-colors group-hover:border-stone-900 sm:left-1/2 sm:top-1/2 sm:-translate-y-1/2"></span>
+              <div class="flex items-center gap-2 pl-10 sm:pl-0 sm:absolute sm:left-1/2 sm:top-[calc(50%_+_0.75rem)] sm:w-40 sm:-translate-x-1/2 sm:flex-col sm:text-center">
+                <span class="flex items-center gap-1">
+                  <span class="h-1 w-1 animate-pulse rounded-full bg-stone-400 [animation-delay:-0.3s] group-hover:bg-stone-900"></span>
+                  <span class="h-1 w-1 animate-pulse rounded-full bg-stone-400 [animation-delay:-0.15s] group-hover:bg-stone-900"></span>
+                  <span class="h-1 w-1 animate-pulse rounded-full bg-stone-400 group-hover:bg-stone-900"></span>
+                </span>
+                <span class="font-medium text-stone-900 group-hover:underline sm:text-sm">See the full list</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+
+      <a href="/work/" class="mt-8 inline-flex items-center gap-2 rounded-full border border-stone-300 px-5 py-2.5 text-sm font-medium text-stone-900 transition-colors hover:border-stone-900 hover:bg-stone-900 hover:text-stone-50">
+        See the full list →
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-2xl font-medium tracking-tight">About</h2>
+      <p class="mt-5  leading-relaxed text-stone-600">
+        Professional with 12 years of web engineering experience (back-end), including 7 years specializing in Drupal 
+        development for high-performance enterprise portals. Currently working as a Solutions Engineer (Presales) at
+        Acquia, combining a solid technical background with business acumen to drive sales, support the commercial team,
+        and translate complex technical challenges into strategic solutions for clients.
+      </p>
+
+      <a href="/about/" class="mt-8 inline-block text-base text-stone-600 hover:text-stone-900 hover:underline">
+        Read the full story →
+      </a>
+
+      <div class="mt-8 flex items-center gap-6 text-sm">
+        {% if github %}
+          <a
+            href="{{ github.link }}"
+            rel="noopener"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-stone-600 hover:text-stone-900">
+            <svg
+              viewBox="0 0 24 24"
+              class="h-4 w-4"
+              fill="currentColor"
+              aria-hidden="true">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.754-1.333-1.754-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.469-2.38 1.236-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+            GitHub
+          </a>
+        {% endif %}
+        {% if linkedin %}
+          <a
+            href="{{ linkedin.link }}"
+            rel="noopener"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-stone-600 hover:text-stone-900">
+            <svg
+              viewBox="0 0 24 24"
+              class="h-4 w-4"
+              fill="currentColor"
+              aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Formal -->
+  <section id="about-formal" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-1 gap-10 sm:grid-cols-[14rem_1fr]">
+        <div class="space-y-6 sm:border-r sm:border-stone-200 sm:pr-10">
+          <div>
+            <span class="block font-mono text-[10px] uppercase tracking-[0.2em] text-stone-400">Role</span>
+            <span class="mt-1 block text-sm text-stone-900">Solutions Engineer, Presales</span>
+          </div>
+          <div>
+            <span class="block font-mono text-[10px] uppercase tracking-[0.2em] text-stone-400">Company</span>
+            <span class="mt-1 block text-sm text-stone-900">Acquia</span>
+          </div>
+          <div>
+            <span class="block font-mono text-[10px] uppercase tracking-[0.2em] text-stone-400">Experience</span>
+            <span class="mt-1 block text-sm text-stone-900">12 years</span>
+          </div>
+          <div>
+            <span class="block font-mono text-[10px] uppercase tracking-[0.2em] text-stone-400">Specialization</span>
+            <span class="mt-1 block text-sm text-stone-900">Drupal, 7 years</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-medium tracking-tight">About</h2>
+          <p class="mt-5 leading-relaxed text-stone-600">
+            Professional with 12 years of web engineering experience (back-end), including 7 years specializing in 
+            Drupal development for high-performance enterprise portals. Currently working as a Solutions Engineer
+            (Presales) at Acquia, combining a solid technical background with business acumen to drive sales, support
+            the commercial team, and translate complex technical challenges into strategic solutions for clients.
+          </p>
+
+          <a href="/about/" class="mt-6 inline-block text-base text-stone-600 hover:text-stone-900 hover:underline">
+            Read the full story →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Manifesto -->
+  <section id="about-manifesto" class="reveal bg-stone-900 px-6 py-24 text-stone-50">
+    <div class="mx-auto max-w-5xl">
+      <span class="font-mono text-xs uppercase tracking-widest text-stone-500">About</span>
+
+      <p class="mt-6 max-w-4xl text-3xl font-medium leading-tight tracking-tight md:text-5xl">
+        <span class="text-stone-500">12 years</span>
+        turning back-end engineering into business outcomes — the last
+        <span class="text-stone-500">7</span>
+        spent living inside Drupal, now translating that depth into
+        <span class="underline decoration-stone-600 underline-offset-4">technical wins</span>
+        for Acquia's sales team.
+      </p>
+
+      <div class="mt-14 grid grid-cols-2 gap-8 border-t border-stone-800 pt-10 sm:grid-cols-4">
+        <div>
+          <span class="block font-mono text-3xl font-semibold">12+</span>
+          <span class="mt-1 block text-sm text-stone-400">Years in engineering</span>
+        </div>
+        <div>
+          <span class="block font-mono text-3xl font-semibold">7+</span>
+          <span class="mt-1 block text-sm text-stone-400">Years in Drupal</span>
+        </div>
+        <div>
+          <span class="block font-mono text-3xl font-semibold">5</span>
+          <span class="mt-1 block text-sm text-stone-400">Enterprise brands shipped</span>
+        </div>
+        <div>
+          <span class="block font-mono text-3xl font-semibold">1</span>
+          <span class="mt-1 block text-sm text-stone-400">DXP platform, mastered</span>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-2">
+        {% assign competencies = "Pre-Sales,Software Architecture,Acquia DXP,PHP,Drupal,Decoupled Architectures,Technical Strategy" | split: ',' %}
+        {% for item in competencies %}
+          <span class="rounded-full border border-stone-700 px-3 py-1 font-mono text-xs text-stone-300">{{ item }}</span>
+        {% endfor %}
+      </div>
+
+      <a href="/about/" class="mt-10 inline-flex items-center gap-2 text-base text-stone-300 hover:text-white hover:underline">
+        Read the full story →
+      </a>
+    </div>
+  </section>
+
+  <!-- Work Journey -->
+  <section id="work-journey" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-2xl font-medium tracking-tight">Journey</h2>
+
+      {% if site.works.size > 0 %}
+        <div class="relative mt-12">
+          <div class="absolute inset-y-0 left-4 w-px bg-stone-200 sm:left-1/2"></div>
+
+          <div class="space-y-10">
+            {% assign journey_works = site.works %}
+            {% for work in journey_works %}
+              {% assign company = site.data.companies | where: 'name', work.company | first %}
+              {% assign is_odd = forloop.index0 | modulo: 2 %}
+              <div class="relative sm:flex sm:items-start sm:gap-10 {% if is_odd == 1 %}sm:flex-row-reverse{% endif %}">
+                <span class="absolute left-4 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-stone-900 bg-stone-50 sm:left-1/2"></span>
+
+                <div class="pl-10 sm:w-1/2 sm:pl-0 {% if is_odd == 1 %}sm:pl-10{% else %}sm:pr-10 sm:text-right{% endif %}">
+                  <a href="{{ work.url }}" class="group inline-block">
+                    <span class="font-mono text-xs text-stone-400">
+                      {{ work.date | date: '%Y' }}
+                    </span>
+                    <span class="mt-1 block font-medium leading-snug text-stone-900 group-hover:underline">
+                      {{ work.title }}
+                    </span>
+                    <span class="mt-1 block font-mono text-xs text-stone-400">
+                      {{ company.label }}{% if work.role %}
+                        · {{ work.role }}{% endif %}
+                    </span>
+                  </a>
+                </div>
+
+                <div class="hidden sm:block sm:w-1/2"></div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Work Milestones -->
+  <section id="work-milestones" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-medium tracking-tight">Milestones</h2>
+        <span class="hidden font-mono text-xs text-stone-400 sm:block">Scroll to explore →</span>
+      </div>
+
+      {% if site.works.size > 0 %}
+        <div class="relative mt-12 -mx-6 overflow-x-auto px-6 pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div class="relative flex w-max gap-12">
+            <div class="absolute inset-x-0 top-[7.75rem] h-px bg-stone-200"></div>
+
+            {% assign milestone_works = site.works | reverse %}
+            {% for work in milestone_works %}
+              {% assign company = site.data.companies | where: 'name', work.company | first %}
+              {% assign is_odd = forloop.index0 | modulo: 2 %}
+              <a href="{{ work.url }}" class="group relative flex w-48 shrink-0 flex-col items-center">
+                <div class="flex h-28 flex-col items-center justify-end px-2 text-center {% if is_odd == 1 %}invisible{% endif %}">
+                  <span class="font-mono text-xs text-stone-400">{{ work.date | date: '%Y' }}</span>
+                  <span class="mt-1 text-sm font-medium leading-snug text-stone-900 group-hover:underline">{{ work.title }}</span>
+                  <span class="mt-1 font-mono text-[10px] text-stone-400">{{ company.label }}</span>
+                </div>
+
+                <div class="relative z-10 flex h-6 items-center justify-center">
+                  <span class="h-2.5 w-2.5 rounded-full border-2 border-stone-900 bg-stone-50 transition-colors group-hover:bg-stone-900"></span>
+                </div>
+
+                <div class="flex h-28 flex-col items-center justify-start px-2 text-center {% if is_odd == 0 %}invisible{% endif %}">
+                  <span class="font-mono text-xs text-stone-400">{{ work.date | date: '%Y' }}</span>
+                  <span class="mt-1 text-sm font-medium leading-snug text-stone-900 group-hover:underline">{{ work.title }}</span>
+                  <span class="mt-1 font-mono text-[10px] text-stone-400">{{ company.label }}</span>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-2xl font-medium tracking-tight">Recent Works</h2>
+
+      {% if site.works.size > 0 %}
+        <div class="mt-8 divide-y divide-stone-200">
+          {% assign works = site.works | reverse | slice: 0, 6 %}
+          {% for work in works %}
+            {% assign company = site.data.companies | where: 'name', work.company | first %}
+            {% include work.html content=work %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <a href="/work/" class="mt-8 inline-block text-base text-stone-600 hover:text-stone-900 hover:underline">
+        View full works →
+      </a>
+    </div>
+  </section>
+
+  <!-- Work Grid -->
+  <section id="work-grid" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-2xl font-medium tracking-tight">Recent Work</h2>
+
+      {% if site.works.size > 0 %}
+        <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {% assign grid_works = site.works | reverse | slice: 0, 6 %}
+          {% for work in grid_works %}
+            {% assign company = site.data.companies | where: 'name', work.company | first %}
+            <a href="{{ work.url }}" class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-stone-200 p-6 transition-colors hover:border-stone-900">
+              <span class="font-mono text-xs text-stone-300 transition-colors group-hover:text-stone-400">
+                {{ forloop.index | prepend: '00' | slice: -2, 2 }}
+              </span>
+
+              <span class="mt-6 block font-medium leading-snug text-stone-900">
+                {{ work.title }}
+              </span>
+
+              <div class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-stone-400">
+                <span>{{ company.label }}</span>
+                <span>·</span>
+                <span>{{ work.date | date: '%Y' }}</span>
+              </div>
+
+              <svg
+                viewBox="0 0 24 24"
+                class="absolute right-5 top-5 h-4 w-4 -translate-y-1 translate-x-1 text-stone-300 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-stone-900 group-hover:opacity-100"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7 17 17 7M7 7h10v10" />
+              </svg>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <a href="/work/" class="mt-8 inline-block text-base text-stone-600 hover:text-stone-900 hover:underline">
+        View full works →
+      </a>
+    </div>
+  </section>
+
+  <!-- Work Timeline -->
+  <section id="work-timeline" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-medium tracking-tight">Timeline</h2>
+        <span class="hidden font-mono text-xs text-stone-400 sm:block">Scroll to explore →</span>
+      </div>
+
+      {% if site.works.size > 0 %}
+        <div class="mt-8 -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {% assign timeline_works = site.works | reverse | slice: 0, 6 %}
+          {% for work in timeline_works %}
+            {% assign company = site.data.companies | where: 'name', work.company | first %}
+            <a href="{{ work.url }}" class="group flex w-64 shrink-0 snap-start flex-col justify-between rounded-2xl border border-stone-200 p-6 transition-colors hover:border-stone-900 sm:w-72">
+              <span class="font-mono text-xs text-stone-400">{{ work.date | date: '%b %Y' }}</span>
+
+              <span class="mt-6 block text-lg font-medium leading-snug text-stone-900">
+                {{ work.title }}
+              </span>
+
+              <span class="mt-6 font-mono text-xs text-stone-400">{{ company.label }}</span>
+
+              {% if work.tags.size > 0 %}
+                <div class="mt-4 flex flex-wrap gap-1.5">
+                  {% for tag in work.tags limit: 3 %}
+                    <span class="rounded-full border border-stone-200 px-2 py-0.5 font-mono text-[10px] text-stone-500 group-hover:border-stone-300">
+                      {{ tag }}
+                    </span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <a href="/work/" class="mt-2 inline-block text-base text-stone-600 hover:text-stone-900 hover:underline">
+        View full works →
+      </a>
+    </div>
+  </section>
+
+
+</main>

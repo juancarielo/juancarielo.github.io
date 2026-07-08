@@ -1,22 +1,36 @@
-<footer class="border-t border-stone-200 px-6 py-10">
-  <div class="mx-auto flex max-w-5xl items-center justify-between">
-    <ul class="flex items-center gap-4 text-xs">
-       {% for item in site.data.menu %}
+<footer class="border-t border-stone-200 px-6 pt-12 pb-24">
+  <div class="relative mx-auto max-w-5xl">
+    <ul class="flex items-center gap-4 text-sm">
+      {% for item in site.data.menu %}
 
-         {% assign current = item.link | split:'/' %}
+        {% assign current = item.link | split: '/' %}
 
-          <li class="nav-item{% if page.url == item.link or page.url contains current[1] %} underline{% endif %}">
-            <a class="hover:text-stone-600 hover:underline" href="{{ item.link }}">
-              {{ item.name }}
-            </a>
-          </li>
+        <li class="nav-item{% if page.url == item.link or page.url contains current[1] %} underline{% endif %}">
+          <a class="hover:text-stone-600 hover:underline" href="{{ item.link }}">
+            {{ item.name }}
+          </a>
+        </li>
 
-        {% endfor %}
+      {% endfor %}
     </ul>
-    <p class="text-xs ">
-      {{ site.name }} © {{ "now" | date: "%Y" }}
+
+    <p class="pt-4 text-left text-xs">
+      {{ site.name }} © 2020 · {{ "now" | date: "%Y" }}
       <br>
-      <small>Made with <a href="https://jekyllrb.com/" rel="noopener" target="_blank" class="hover:text-stone-600 hover:underline">Jekyll</a>.</small>
+      <small>Made with
+        <a
+          href="https://jekyllrb.com/"
+          rel="noopener"
+          target="_blank"
+          class="hover:text-stone-600 hover:underline">Jekyll</a>.</small>
     </p>
+
+    <button
+      type="button"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="absolute right-0 top-1/2 -translate-y-1/2 inline-flex items-center gap-1 text-xs text-stone-500 hover:text-stone-900 hover:underline"
+      aria-label="Back to top">
+      ↑ Top
+    </button>
   </div>
 </footer>

@@ -1,17 +1,14 @@
-<div class="post-preview">
-  <a href="{{ include.content.url }}">
-    <h2 class="post-title">
-      {{ include.content.title }}
-    </h2>
-    <h3 class="post-subtitle">
-      {{ include.content.excerpt|strip_html }}
-    </h3>
-  </a>
-  <p class="post-meta">
-    {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=include.content.content %}
+<a href="{{ include.content.url }}" class="group block py-8 first:pt-0 last:pb-0">
+  <span class="font-mono text-xs text-stone-400">
+    {{ include.content.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=include.content.content %}
+  </span>
+  <h2 class="mt-2 text-2xl font-medium tracking-tight text-stone-900 group-hover:underline sm:text-3xl">
+    {{ include.content.title }}
+  </h2>
+  <p class="mt-3 leading-relaxed text-stone-600">
+    {{ include.content.excerpt | strip_html | truncatewords: 40 }}
   </p>
-</div>
-
-{% if forloop.last == false %}
-  <hr>
-{% endif %}
+  <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-stone-900">
+    Read more →
+  </span>
+</a>

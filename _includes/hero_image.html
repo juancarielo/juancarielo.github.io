@@ -1,17 +1,36 @@
-<!-- Hero Example 2: photo background -->
-<section class="relative min-h-[88vh] overflow-hidden px-6 pb-20 pt-28 text-center md:min-h-[95vh] md:pt-40">
+<section class="relative min-h-[98vh] overflow-hidden px-6 pb-20 pt-28 text-center md:min-h-[99vh] md:pt-40">
   <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
     <img
-      src="/assets/src/images/kpugy2kpugy2kpug.png"
+      src="/assets/src/images/about.png"
       alt=""
-      class="h-full w-full object-cover object-[68%_0%] grayscale"
+      class="h-full w-full object-cover object-[65%_0%] grayscale brightness-85"
       loading="eager" />
   </div>
 
   <div class="relative mx-auto max-w-2xl">
-    <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">{{ page.title }}</h1>
+    <h1 class="text-5xl md:text-6xl">{{ page.title }}</h1>
     <p class="mx-auto mt-4 max-w-[40ch] text-base text-stone-600 md:text-lg">
       {{ page.description }}
     </p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })"
+      class="mt-6 inline-flex flex-col items-center gap-2 text-stone-500 transition-colors hover:text-stone-900"
+      aria-label="Scroll to About">
+      <span class="font-mono text-xs uppercase tracking-widest"></span>
+      <svg
+        viewBox="0 0 24 24"
+        class="h-4 w-4 animate-bounce"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
   </div>
 </section>

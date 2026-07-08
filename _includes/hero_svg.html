@@ -1,30 +1,56 @@
-<!-- Hero Example 1: SVG circuit / tech effect -->
-<section class="relative overflow-hidden px-6 pb-20 pt-28 text-center md:pt-40">
-  <div class="pointer-events-none absolute inset-0 -z-10 bg-stone-50" aria-hidden="true">
-    <svg class="absolute inset-0 h-full w-full" aria-hidden="true">
-      <defs>
-        <pattern
-          id="tech-grid"
-          width="40"
-          height="40"
-          patternUnits="userSpaceOnUse">
-          <path
-            d="M 40 0 L 0 0 0 40"
-            fill="none"
-            stroke="#e7e5e4"
-            stroke-width="1" />
-        </pattern>
-      </defs>
-      <rect
-        width="100%"
-        height="100%"
-        fill="url(#tech-grid)" />
-    </svg>
+{% if include.background %}
+  {% assign text_color = "text-black" %}
+  {% assign background_color = "bg-neutral-100" %}
+{% else %}
+  {% assign text_color = "text-black" %}
+  {% assign background_color = "bg-stone-50" %}
+{% endif %}
+
+<section class="relative overflow-hidden px-6 pb-20 pt-32 md:pb-34 md:pt-50 text-center ">
+  <div class="pointer-events-none absolute inset-0 -z-10 {{ background_color }}" aria-hidden="true">
+
+    {% unless include.background %}
+      <svg class="absolute inset-0 h-full w-full" aria-hidden="true">
+        <defs>
+          <pattern
+            id="tech-grid"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse">
+            <path
+              d="M 40 0 L 0 0 0 40"
+              fill="none"
+              stroke="#e7e5e4"
+              stroke-width="1" />
+          </pattern>
+        </defs>
+        <rect
+          width="100%"
+          height="100%"
+          fill="url(#tech-grid)" />
+      </svg>
+    {% endunless %}
   </div>
 
-  <div class="relative mx-auto max-w-2xl">
-    <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">{{ include.title | default: page.title }}</h1>
-    <p class="mx-auto mt-4 max-w-[40ch] text-base text-stone-600 md:text-lg">{{ include.description | default: page.description }}</p>
-  {% comment %} {{  }} {% endcomment %}
+  <div class="relative mx-auto max-w-2xl mt-16 mb-2">
+    <h1 class="text-5xl md:text-6xl {{ text_color }}">
+      {{ include.title | default: page.title }}
+    </h1>
+    <div class="mx-auto mt-4 max-w-[40ch] text-stone-600 {{ text_color }}">
+      <p class="text-base md:text-lg">
+
+        {{ include.description | default: page.description | default: page.role }}
+
+        {% if page.date %}
+          <br>
+          <small class="italic text-xs">
+            {{ page.date | date: '%Y' }}
+            {% if page.end %}
+              - {{ page.end | date: '%Y' }}
+            {% endif %}
+          </small>
+        {% endif %}
+      </p>
+    </div>
   </div>
 </section>

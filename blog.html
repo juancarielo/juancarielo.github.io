@@ -4,10 +4,26 @@ title: Blog
 description: Posts to share.
 ---
 
-{% if site.posts.size > 0 %}
-  {% for post in site.posts %}
-    {% include post.html content=post %}
-  {% endfor %}
-{% else %}
-  <p class="text-center py-5 my-5">He he, it's not done yet. I'm working on it..</p>
-{% endif %}
+
+<main>
+
+  {% include hero_svg.html background="0" %}
+
+  <section id="work" class="reveal border-t border-stone-200 px-6 py-20">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-4xl font-medium tracking-tight mb-10">All Blog Posts</h2>
+
+      {% if site.posts.size > 0 %}
+        <div class="divide-y divide-stone-200">
+          {% for post in site.posts %}
+            {% include post.html content=post %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center py-5 my-5">He he, it's not done yet. I'm working on it..</p>
+      {% endif %}
+
+    </div>
+  </section>
+
+</main>

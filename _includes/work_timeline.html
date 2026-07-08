@@ -1,0 +1,29 @@
+{% assign highlight_works = site.works | reverse | slice: 0, 5 %}
+
+<div class="relative mt-10 sm:mt-16">
+  <div class="absolute inset-y-0 left-4 w-px bg-stone-200 sm:hidden"></div>
+  <div class="absolute inset-x-0 top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-stone-300 to-transparent sm:block"></div>
+
+  <div class="space-y-8 sm:grid sm:grid-cols-5 sm:gap-8 sm:space-y-0">
+    {% for work in highlight_works %}
+      {% assign company = site.data.companies | where: 'name', work.company | first %}
+      {% assign is_odd = forloop.index0 | modulo: 2 %}
+      <a href="{{ work.url }}" class="group relative block sm:h-56">
+        <span class="absolute left-4 top-1.5 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-stone-900 bg-stone-50 transition-colors group-hover:bg-stone-900 sm:left-1/2 sm:top-1/2 sm:-translate-y-1/2 sm:transition-transform sm:duration-200 sm:group-hover:scale-125">
+          {% if forloop.first %}
+            <span class="absolute -inset-1 animate-ping rounded-full bg-stone-900/50"></span>
+          {% endif %}
+        </span>
+
+        <span class="absolute left-1/2 top-1/2 hidden h-5 w-px -translate-x-1/2 bg-stone-300 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-hover:bg-stone-900 sm:block {% if is_odd == 1 %}{% else %}-translate-y-full{% endif %}"></span>
+
+        <div class="pl-10 sm:pl-0 sm:absolute sm:left-1/2 sm:w-40 sm:-translate-x-1/2 sm:pb-3 sm:pt-3 sm:text-center {% if is_odd == 1 %}sm:top-1/2 sm:mt-12{% else %}sm:bottom-1/2 sm:mb-12{% endif %}">
+          <span class="font-mono text-xs text-stone-400">{{ work.date | date: '%Y' }}</span>
+          <span class="block font-medium text-base leading-snug text-stone-900 group-hover:underline">{{ work.title }}</span>
+          <span class="block font-mono text-xs text-stone-400 ">{{ company.label }}</span>
+        </div>
+      </a>
+    {% endfor %}
+
+  </div>
+</div>

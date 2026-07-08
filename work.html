@@ -1,23 +1,22 @@
 ---
 layout: page
 title: Work
-description: Works I've been contributed.
+# description: Works I've been contributed.
+description: What I've been contributing.
 ---
 
-{% include hero_svg.html %}
+<main>
 
-  <main>
+  {% include hero_svg.html background=true %}
 
-  <!-- Work -->
   <section id="work" class="reveal border-t border-stone-200 px-6 py-20">
     <div class="mx-auto max-w-5xl">
-      <h2 class="text-2xl font-medium tracking-tight">Full Works</h2>
+      <h2 class="text-4xl">Full List</h2>
 
       {% if site.works.size > 0 %}
         <div class="mt-8 divide-y divide-stone-200">
           {% assign works = site.works | reverse %}
           {% for work in works %}
-            {% assign company = site.data.companies | where: 'name', work.company | first %}
             {% include work.html content=work %}
           {% endfor %}
         </div>

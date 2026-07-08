@@ -1,3 +1,5 @@
+{% assign company = site.data.companies | where: 'name', work.company | first %}
+
 <a href="{{ work.url }}" class="group flex items-center justify-between gap-6 py-5">
   <span class="font-medium text-stone-900 group-hover:underline">
     <!-- {{ work.title }} <span class="hidden md:block">— <br> {{ work.role }}</span> -->

@@ -4,53 +4,71 @@ title: About
 description: Who I am.
 ---
 
-{% include hero_image.html %}
+<main>
 
-  <main>
+  {% include hero_image.html %}
 
   <!-- About -->
   <section id="about" class="reveal border-t border-stone-200 px-6 py-20">
     <div class="mx-auto max-w-5xl">
 
-      <div class="space-y-6">
+      <div class="space-y-10">
 
-        <h2 class="text-2xl font-medium tracking-tight">Solutions Engineer & Drupal Specialist</h2>
+        <div class="grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
+          {% include numbers.html %}
+        </div>
 
-        <!-- <blockquote>  <strong>Pre-Sales Solutions Engineer & Senior Drupal Architect</strong></blockquote> -->
-        <p>With over 12 years of experience in software engineering and web development, I have established a solid 
-          career focused on systems architecture, back-end engineering, and the delivery of high-performance enterprise
-          portals. My core specialty is built on more than 7 years of deep engagement within the Drupal ecosystem,
-          leading the development of robust, scalable, and secure platforms for the enterprise market.</p>
+        <blockquote class="border-l-2 border-stone-300 pl-4 text-xl italic text-stone-600 sm:text-2xl">
+          With
+          <strong class="font-semibold not-italic text-stone-900">12+ years</strong>
+          of comprehensive experience in web engineering and
+          <strong class="font-semibold not-italic text-stone-900">7+ years</strong>
+          of deep specialization within the Drupal ecosystem, I operate at the intersection of technical architecture and strategic sales.
+        </blockquote>
 
-        <p>Currently, as a Solutions Engineer (Pre-Sales) at Acquia LatAm, I leverage this advanced technical background 
-          as a strategic business differentiator. My role bridges the gap between software engineering and the sales
-          process, supporting commercial teams by translating complex business challenges into viable technical
-          solutions. I am responsible for handling technical discoveries, designing efficient architectures, mitigating
-          risks, delivering high-impact PoCs/demos, and demonstrating the real-world value of Acquia's DXP (Digital
-          Experience Platform) portfolio, closely aligning platform capabilities with each client's unique needs.</p>
+        <div class="space-y-6 border-t border-stone-200 pt-10">
+          {% comment %} <span class="block font-mono text-xs uppercase tracking-[0.2em] text-stone-400">Solutions Engineer</span> {% endcomment %}
+          <h2 class="text-xs font-mono uppercase tracking-[0.2em] text-stone-400">Solutions Engineer</h2>
 
-        <p>Throughout my career, I have developed a strong ability to transition seamlessly between low-level code 
-          discussions with development teams and executive presentations for C-level decision-makers. My technical
-          background includes driving enterprise-level implementations for major brands like CPFL, Johnson & Johnson,
-          Honda, Amil (UnitedHealth Group), and TIM, utilizing advanced modern tech stacks, CI/CD pipelines, decoupled
-          architectures, and AI integrations.</p>
+          <p>Currently acting as a
+            <strong>Solutions Engineer (Presales)</strong>, I leverage a robust back-end
+            development background and extensive expertise in Digital Experience Platforms (DXP) to support complex
+            sales ecosystems. By architecting tailored technical improvements and solving high-level client issues, I
+            directly drive successful business outcomes and accelerate regional growth.</p>
+        </div>
 
-        <p>Looking back at where it all started, my roots in technology trace back to early web engineering, writing raw 
-          PHP, managing full-stack environments, and developing applications for digital advertising campaigns. This
-          deep, hands-on foundation in the trenches of pure web development is what allows me today to quickly unmask
-          complex modern infrastructure challenges and confidently guide enterprise clients toward successful digital
-          transformations.</p>
+        <div class="space-y-6">
+          {% comment %} <span class="block font-mono text-xs uppercase tracking-[0.2em] text-stone-400">Developer</span> {% endcomment %}
+          <h2 class="text-xs font-mono uppercase tracking-[0.2em] text-stone-400">Back-end Developer</h2>
 
-        <p>
-          <strong>Core Competencies:</strong>
-          Solutions Engineering (Pre-Sales), Software Architecture, Acquia DXP 
-          Ecosystem (Cloud Platform, Code Studio), Advanced PHP Engineering, Drupal (7, 8, 9, 10, 11 & CMS), Decoupled
-          Architectures, Technical Strategy, and Consultative Selling.
-        </p>
+          <p>As a
+            <strong>Back-end Developer</strong>, I have, throughout my career, developed a strong ability to transition seamlessly between low-level code
+            discussions with development teams and executive presentations for C-level decision-makers. My technical
+            background includes driving enterprise-level implementations for major brands like CPFL, Johnson & Johnson,
+            Honda, Amil (UnitedHealth Group), and TIM, utilizing advanced modern tech stacks, CI/CD pipelines, decoupled
+            architectures, and AI integrations.</p>
+
+          <p>Looking back at where it all started, my roots in technology trace back to early web engineering, writing raw
+            PHP, managing full-stack environments, and developing applications for digital advertising campaigns. This
+            deep, hands-on foundation in the trenches of pure web development is what allows me today to quickly unmask
+            complex modern infrastructure challenges and confidently guide enterprise clients toward successful digital
+            transformations.</p>
+        </div>
+
+        <div class="space-y-6">
+          {% comment %} <span class="block font-mono text-xs uppercase tracking-[0.2em] text-stone-400">Core Competencies</span> {% endcomment %}
+          <h2 class="text-xs font-mono uppercase tracking-[0.2em] text-stone-400">Core Competencies</h2>
+
+          <p>
+            Solutions Engineering (Pre-Sales), Software Architecture, Acquia DXP
+            Ecosystem (Cloud Platform, Code Studio), Advanced PHP Engineering, Drupal (7, 8, 9, 10, 11 & CMS), Decoupled
+            Architectures, Technical Strategy, and Consultative Selling.
+          </p>
+        </div>
 
       </div>
 
-      <div class="mt-8 flex items-center gap-6 text-sm">
+      <div id="content" class="mt-20 flex items-center gap-6 text-sm">
         {% assign linkedin = site.data.social | where: 'name', 'LinkedIn' | first %}
         {% assign github = site.data.social | where: 'name', 'Github' | first %}
 

@@ -1,6 +1,8 @@
 ---
 title: CPFL Energia
 company: nttdata
+role: Drupal Back-end Developer
+end: 2023-04-12
 link: https://www.cpfl.com.br/
 tags: [Drupal, Acquia Cloud, Site Studio, Custom Module, API]
 ---

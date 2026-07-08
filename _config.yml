@@ -1,8 +1,8 @@
 title: Juan Carielo
 name: Juan Carielo
 author: Juan Carielo
-description: Just a simple portfolio to share projects and content about Drupal.
-theme_color: "#212529"
+description: Solutions Engineer & Drupal Specialist
+theme_color: "#1c1917"
 google_analytics: "G-SHZ0XQ2CFL"
 url: "https://juancarielo.github.io"
 
@@ -13,7 +13,7 @@ timezone: America/Sao_Paulo
 collections:
   works:
     output: true
-    permalink: /portfolio/:title
+    permalink: /work/:title
   posts:
     output: true
     permalink: /blog/:title
@@ -22,7 +22,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: "/assets/dist/img/share.png"
+      image: "/assets/dist/img/background.png"
   - scope:
       path: "assets/dist/img/**"
     values:
@@ -46,3 +46,7 @@ defaults:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+exclude:
+  - .agents
+  - .well-known

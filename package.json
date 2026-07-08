@@ -9,9 +9,12 @@
     "start": "gulp",
     "build": "gulp build",
     "tailwind:build": "tailwindcss -i ./assets/src/css/tailwind.css -o ./assets/dist/css/tailwind.min.css --minify",
-    "tailwind:watch": "tailwindcss -i ./assets/src/css/tailwind.css -o ./assets/dist/css/tailwind.min.css --watch"
+    "tailwind:watch": "tailwindcss -i ./assets/src/css/tailwind.css -o ./assets/dist/css/tailwind.min.css --watch --minify",
+    "serve": "browser-sync start --no-open --proxy '127.0.0.1:4000' --files './**/*' --ignore 'node_modules'"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "browser-sync": "^3.0.4",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "gulp-rename": "^2.0.0",
