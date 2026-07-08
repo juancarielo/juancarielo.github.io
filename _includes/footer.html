@@ -1,26 +1,22 @@
-<footer class="mb-3">
-  <hr class="my-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          {% for item in site.data.social %}
-          <li class="list-inline-item">
-            <a href="{{ item.link }}" rel="noopener" target="_blank" title="{{ item.name }}" aria-label="{{ item.name }}">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fa-stack-1x fa-inverse {{ item.class }}"></i>
-              </span>
+<footer class="border-t border-stone-200 px-6 py-10">
+  <div class="mx-auto flex max-w-5xl items-center justify-between">
+    <ul class="flex items-center gap-4 text-xs">
+       {% for item in site.data.menu %}
+
+         {% assign current = item.link | split:'/' %}
+
+          <li class="nav-item{% if page.url == item.link or page.url contains current[1] %} underline{% endif %}">
+            <a class="hover:text-stone-600 hover:underline" href="{{ item.link }}">
+              {{ item.name }}
             </a>
           </li>
-          {% endfor %}
-        </ul>
-        <p class="copyright text-center text-muted mt-5">
-          {{ site.name }} © {{ "now" | date: "%Y" }}
-          <br>
-          <small>Made with <a href="https://jekyllrb.com/" rel="noopener" target="_blank">Jekyll</a>.</small>
-        </p>
-      </div>
-    </div>
+
+        {% endfor %}
+    </ul>
+    <p class="text-xs ">
+      {{ site.name }} © {{ "now" | date: "%Y" }}
+      <br>
+      <small>Made with <a href="https://jekyllrb.com/" rel="noopener" target="_blank" class="hover:text-stone-600 hover:underline">Jekyll</a>.</small>
+    </p>
   </div>
 </footer>
