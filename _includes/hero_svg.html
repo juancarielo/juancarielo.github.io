@@ -1,0 +1,30 @@
+<!-- Hero Example 1: SVG circuit / tech effect -->
+<section class="relative overflow-hidden px-6 pb-20 pt-28 text-center md:pt-40">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-stone-50" aria-hidden="true">
+    <svg class="absolute inset-0 h-full w-full" aria-hidden="true">
+      <defs>
+        <pattern
+          id="tech-grid"
+          width="40"
+          height="40"
+          patternUnits="userSpaceOnUse">
+          <path
+            d="M 40 0 L 0 0 0 40"
+            fill="none"
+            stroke="#e7e5e4"
+            stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect
+        width="100%"
+        height="100%"
+        fill="url(#tech-grid)" />
+    </svg>
+  </div>
+
+  <div class="relative mx-auto max-w-2xl">
+    <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">{{ include.title | default: page.title }}</h1>
+    <p class="mx-auto mt-4 max-w-[40ch] text-base text-stone-600 md:text-lg">{{ include.description | default: page.description }}</p>
+  {% comment %} {{  }} {% endcomment %}
+  </div>
+</section>

@@ -1,6 +1,8 @@
 ---
 title: Acquia Inc
 company: acquia
+role: Solutions Engineer (Presales)
+end: 2026-06-24
 tags: [Drupal, Acquia, Sales]
 isCompany: true
 ---
