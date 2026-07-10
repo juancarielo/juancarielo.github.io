@@ -7,7 +7,7 @@
 @layer base {
   html {
     /* ~18px em vez de 16px */
-    font-size: 113.5%;
+    font-size: 114.5%;
   }
 
   body {

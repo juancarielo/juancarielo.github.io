@@ -6,15 +6,24 @@ permalink: /404.html
 
 <style>
   body {
-    background-color: #212529;
-  }
-  .copyright a {
-    color: #fff;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
 </style>
 
-<div id="not-found" class="container text-center my-5" style="padding: 129px 0;">
-  <h1><strong>404</strong></h1>
-  <p class="my-5">Page not found :(</p>
-  <p>The requested page could not be found.</p>
-</div>
+<main class="flex flex-1 flex-col">
+
+  <section class="flex flex-1 flex-col items-center justify-center px-6 pt-16 text-center">
+    <h1 class="text-4xl text-stone-900 md:text-5xl">404</h1>
+
+    <p class="mx-auto mt-4 max-w-[40ch] text-base text-stone-600">
+      The page you're looking for doesn't exist or has been moved.
+    </p>
+
+    <a href="/" class="mt-8 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-2.5 text-sm font-medium text-stone-900 transition-colors hover:border-stone-900 hover:bg-stone-900 hover:text-stone-50">
+      ← Back to home
+    </a>
+  </section>
+
+</main>
