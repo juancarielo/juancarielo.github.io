@@ -22,7 +22,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: "/assets/dist/img/background.png"
+      image: "/assets/images/background.png"
   - scope:
       path: "assets/dist/img/**"
     values:

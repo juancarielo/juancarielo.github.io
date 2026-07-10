@@ -2,7 +2,7 @@
 title: What is Drupal?
 tags: [Drupal, CMS, Open-source, Acquia]
 image: assets/dist/img/posts/drupal_acquia.png
-published: true
+published: false
 ---
 
 Drupal is the leading enterprise, open source content management system (CMS) in the world, and the foundation of Acquia’s digital experience platform (DXP). 
