@@ -30,26 +30,28 @@
           fill="url(#tech-grid)" />
       </svg>
     {% endunless %}
+
   </div>
 
   <div class="relative mx-auto max-w-2xl mt-16 mb-2">
+
     <h1 class="text-5xl md:text-6xl {{ text_color }}">
       {{ include.title | default: page.title }}
     </h1>
+
     <div class="mx-auto mt-4 max-w-[40ch] text-stone-600 {{ text_color }}">
       <p class="text-base md:text-lg">
 
         {{ include.description | default: page.description | default: page.role }}
 
         {% if page.date %}
+          {% assign company = site.data.companies | where: 'name', page.company | first %}
           <br>
-          <small class="italic text-xs">
-            {{ page.date | date: '%Y' }}
-            {% if page.end %}
-              - {{ page.end | date: '%Y' }}
-            {% endif %}
+          <small class="">
+            {{ company.label }} · {{ page.date | date: '%Y' }}
           </small>
         {% endif %}
+
       </p>
     </div>
   </div>

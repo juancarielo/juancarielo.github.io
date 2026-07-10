@@ -1,0 +1,16 @@
+{% for social in site.data.social %}
+  <a
+    href="{{ social.link }}"
+    rel="noopener"
+    target="_blank"
+    aria-label="{{ social.name }}"
+    class="inline-flex h-10 items-center justify-center rounded-full text-stone-900 transition hover:bg-stone-900/5 hover:text-stone-900 {% if include.showLabel %}gap-2 px-2{% else %}w-10{% endif %}">
+    <i
+      class="ph ph-{{ social.class }} text-3xl"
+      aria-hidden="true"
+      weight="fill"></i>
+    {% if include.showLabel %}
+      <span class="text-sm font-medium">{{ social.name }}</span>
+    {% endif %}
+  </a>
+{% endfor %}

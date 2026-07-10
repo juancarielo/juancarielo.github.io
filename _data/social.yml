@@ -1,7 +1,7 @@
 - name: Github
   link: "https://github.com/juancarielo"
-  class: "fab fa-github"
+  class: "github-logo"
 
 - name: LinkedIn
   link: "https://www.linkedin.com/in/juancarielo/"
-  class: "fab fa-linkedin"
+  class: "linkedin-logo"
