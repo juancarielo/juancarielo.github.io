@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
 gem "jekyll"
-gem "jekyll-seo-tag", "~> 2.8"
-gem "jekyll-sitemap", "~> 1.4"
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.9"
+
+group :jekyll_plugins do
+  gem "jekyll-seo-tag", "~> 2.9"
+  gem "jekyll-sitemap", "~> 1.4"
+end
+
